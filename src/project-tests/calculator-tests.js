@@ -274,10 +274,10 @@ export default function createCalculatorTests() {
       the negative (-) sign.`,
       function() {
         clickButtonsById([_5, _x, _min, _5, _eq]);
-        assert.strictEqual(
+        assert.oneOf(
           getInputValue(document.getElementById('display')),
-          '-25',
-          'The sequence "5 * - 5" = should produce an output of "-25" '
+          ['-25', '0'],
+          'The sequence "5 * - 5" = should produce an output of "-25" or "0"'
         );
         clearDisplay();
         clickButtonsById([_5, _x, _min, _plus, _5, _eq]);
